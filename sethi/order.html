@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Sethi Chat Bhandar - Order</title>
+  </head>
+  <body>
+    
+    	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="index.php">Sethi Chat Bhandar</a>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="order.html">Order</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="trackOrder.html">Track</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+	<div class="container">
+		<div class="jumbotron" style="background-color: #F8D7DA">
+ 		 	<center><h1>Menu</h1></center>
+ 		 	<h3>Order Time : 12:00PM to 9:00PM</h3>
+		</div>
+<h4 style="color:#f00">-- FREE HOME DELIVERY --</h4>
+		<div class="row">
+  <div class="col-4">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Golgappe</a>
+
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Dahi Bhalla</a>
+
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Papdi Chaat</a>
+
+      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Tikki</a>
+
+    </div>
+  </div>
+
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
+
+      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+        <p style="color:#f00">Rs. 20/6 Piece</p>
+      	<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+          
+      		<span>No. Of Plates : &nbsp;&nbsp;</span>
+  			<button type="button" id="golgappaSUB" class="btn btn-danger">-</button>
+  			<button type="button" id="golgappaSHOW" class="btn btn-default">0</button>
+  			<input type="hidden" id="golgappaPlates" value="0">
+  			<button type="button" id="golgappaADD" class="btn btn-success">+</button>
+  		</div>
+  	</div>
+      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+      	 <p style="color:#f00">Rs. 40/1 Plate</p>
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+         
+      		<span>No. Of Plates : &nbsp;&nbsp;</span>
+  			<button type="button" id="bhallaSUB" class="btn btn-danger">-</button>
+  			<button type="button" id="bhallaSHOW" class="btn btn-default">0</button>
+  			<input type="hidden" id="bhallaPlates" value="0">
+  			<button type="button" id="bhallaADD" class="btn btn-success">+</button>
+  		</div>
+      </div>
+      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+      	 <p style="color:#f00">Rs. 40/1 Plate</p>
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+         
+      		<span>No. Of Plates : &nbsp;&nbsp;</span>
+  			<button type="button" id="papdiSUB" class="btn btn-danger">-</button>
+  			<button type="button" id="papdiSHOW" class="btn btn-default">0</button>
+  			<input type="hidden" id="papdiPlates" value="0">
+  			<button type="button" id="papdiADD" class="btn btn-success">+</button>
+  		</div>
+      </div>
+      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+      	<p style="color:#f00">Rs. 40/1 Plate</p>
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+
+      		<span>No. Of Plates : &nbsp;&nbsp;</span>
+  			<button type="button" id="tikkiSUB" class="btn btn-danger">-</button>
+  			<button type="button" id="tikkiSHOW" class="btn btn-default">0</button>
+  			<input type="hidden" id="tikkiPlates" value="0">
+  			<button type="button" id="tikkiADD" class="btn btn-success">+</button>
+  		</div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<!-- Address Field -->
+<div class="row">
+	<div class="jumbotron" style="background-color:#D1ECF1">	<h3>Address Field</h3>
+	</div>
+	<form style="margin-left: 20px">
+  <div class="form-group row">
+    <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputName" placeholder="Name" required>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="MobileNumber" class="col-sm-2 col-form-label">Mobile Number</label>
+    <div class="col-sm-10">
+      <input type="number" class="form-control" id="MobileNumber" placeholder="Used to Track Order" required>
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <label for="HouseNumber" class="col-sm-2 col-form-label">House Number</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="HouseNumber" placeholder="House Number" required>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="NearBy" class="col-sm-2 col-form-label">NearBy Place</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="NearBy" placeholder="NearBy Place" required>
+    </div>
+  </div>
+
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="sector">Sector</label>
+      <div class="col-sm-10">
+      <select class="custom-select form-control" id="sector" required>
+        <option selected>Choose...</option>
+        <option value="Sector 24">Sector 24</option>
+        <option value="Sector 25">Sector 25</option>
+        <option value="Sector 26">Sector 26</option>
+        <option value="Sector 27">Sector 27</option>
+        <option value="Sector 28">Sector 28</option>
+        <option value="Sector 29(Tribune Mitra Vihar)">Sector 29(Tribune Mitra Vihar)</option>
+        <option value="Madanpur">Madanpur</option>
+        <option value="Moginand">Moginand</option>
+        <option value="JaisingPura">JaisingPura</option>
+        <option value="Ramgarh">Ramgarh</option>
+      </select>
+  </div>
+    </div>
+
+     <div class="form-group row">
+    <label for="city" class="col-sm-2 col-form-label">City</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="city" value="Panchkula">
+    </div>
+
+  	 <div class="form-group row">
+    <div class="col-sm-10">
+     
+     <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="order">
+  Order
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Order or Edit Again ?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+          	Sethi Chat Bhandar
+          </span>
+        </button>
+      </div>
+      <div class="modal-body" id="orderDetails">
+        Order Details : 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Edit Again</button>
+        <button type="button" data-toggle="modal" data-target="#exampleModal2" id="placeOrder" class="btn btn-success" disabled>Place Order</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Order Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">
+          	Sethi Chat Bhandar
+          </span>
+        </button>
+      </div>
+      <div class="modal-body" id="orderDetails">
+        <div id="show"></div>
+      </div>
+      <div class="modal-footer">
+        <a href="trackOrder.html"><button type="button" id="placeOrder" class="btn btn-success">Track Order</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+  </div>
+  
+  
+ 
+</form>
+
+</div>
+
+
+
+	</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+
+
+	<script type="text/javascript">
+		function plateAdd(displayID,valueID){
+				AlreadyValue = parseInt($(valueID).val());
+				$(displayID).html((AlreadyValue+1));
+				$(valueID).val((AlreadyValue+1));
+		}
+		function plateSub(displayID,valueID){
+				AlreadyValue =  parseInt($(valueID).val());
+				if(AlreadyValue <= 0){
+					$(displayID).html(0);
+					$(valueID).val(0);
+				}else{
+				$(displayID).html((AlreadyValue-1));
+				$(valueID).val((AlreadyValue-1));
+			}
+		}
+		function DefaultValue(displayID,valueID){
+			$(displayID).html(0);
+			$(valueID).val(0);
+		}
+		function DefaultValue2(valueID){
+			$(valueID).val('');
+		}
+		function getValue(id){
+			return $(id).val();
+		}
+
+		$(document).ready(function(){
+			/*Default Value*/
+			DefaultValue('#golgappaSHOW','#golgappaPlates');
+			DefaultValue('#bhallaSHOW','#bhallaPlates');
+			DefaultValue('#papdiSHOW','#papdiPlates');
+			DefaultValue('#tikkiSHOW','#tikkiPlates');
+			/*Golgappe*/
+			$('#golgappaADD').on('click',function(e){
+				e.preventDefault();
+				plateAdd('#golgappaSHOW','#golgappaPlates');
+			});
+			$('#golgappaSUB').on('click',function(e){
+				e.preventDefault();
+				plateSub('#golgappaSHOW','#golgappaPlates');
+			});
+
+			/*Bhalla*/
+			$('#bhallaADD').on('click',function(e){
+				e.preventDefault();
+				plateAdd('#bhallaSHOW','#bhallaPlates');
+			});
+			$('#bhallaSUB').on('click',function(e){
+				e.preventDefault();
+				plateSub('#bhallaSHOW','#bhallaPlates');
+			});
+
+			/*Papdi*/
+			$('#papdiADD').on('click',function(e){
+				e.preventDefault();
+				plateAdd('#papdiSHOW','#papdiPlates');
+			});
+			$('#papdiSUB').on('click',function(e){
+				e.preventDefault();
+				plateSub('#papdiSHOW','#papdiPlates');
+			});
+
+			/*Tikki*/
+			$('#tikkiADD').on('click',function(e){
+				e.preventDefault();
+				plateAdd('#tikkiSHOW','#tikkiPlates');
+			});
+			$('#tikkiSUB').on('click',function(e){
+				e.preventDefault();
+				plateSub('#tikkiSHOW','#tikkiPlates');
+			});
+
+			/**Order Details - Finalize Order**/
+			$('#order').on('click',function(){
+				/* Address */
+				var name = getValue('#inputName');
+				var mobile = getValue('#MobileNumber');
+				var house = getValue('#HouseNumber');
+				var nearby = getValue('#NearBy');
+				var sector = getValue('#sector');
+				var golgappaPlates = getValue('#golgappaPlates');
+				var bhallaPlates = getValue('#bhallaPlates');
+				var papdiPlates = getValue('#papdiPlates');
+				var tikkiPlates = getValue('#tikkiPlates');
+
+				if(name!='' && mobile!='' && house!='' && (golgappaPlates>0 || bhallaPlates>0 || papdiPlates>0 || tikkiPlates>0)){
+
+					$("#placeOrder"). attr("disabled", false); 
+
+				/*Order Details*/
+				
+
+				/** BILL CALCULATE **/
+				golgappaRate = 20;
+				bhallaRate = 40;
+				papdiRate = 40;
+				tikkiRate = 40;
+
+				golgappaBill = golgappaPlates * golgappaRate;
+				bhallaBill = bhallaPlates * bhallaRate;
+				papdiBill = papdiPlates * papdiRate;
+				tikkiBill = tikkiPlates * tikkiRate;
+
+				TotalBill = golgappaBill + bhallaBill + papdiBill + tikkiBill;
+
+				if(golgappaPlates>0){
+					golgappaColor = "#f00";
+				}else{
+					golgappaColor = '#000';
+				}
+				if(bhallaPlates>0){
+					bhallaColor = "#f00";
+				}else{
+					bhallaColor = '#000';
+				}
+				if(papdiPlates>0){
+					papdiColor = "#f00";
+				}else{
+					papdiColor = '#000';
+				}
+				if(tikkiPlates>0){
+					tikkiColor = "#f00";
+				}else{
+					tikkiColor = '#000';
+				}
+
+				var data = "<h5>Order Details : </h5><br><span style='color:"+golgappaColor+"''>Golgapppe (No. of Plates) : "+golgappaPlates+"</span> (Bill : "+golgappaBill+")<br><span style='color:"+bhallaColor+"'>Bhalla (No. of Plates) : "+bhallaPlates+"</span> (Bill : "+bhallaBill+")<br><span style='color:"+papdiColor+"'>Papdi Chat(No. of Plates) : "+papdiPlates+"</span> (Bill : "+papdiBill+")<br><span style='color:"+tikkiColor+"'>Tikki (No. of Plates): "+tikkiPlates+"</span> (Bill : "+tikkiBill+")";
+				data+="<br><br><h5 style='color:#f00'>Total Bill : "+TotalBill+" Rs. <span style='color:#000;font-size:12px'>(Cash On Delivery)</span><h5>";
+				data += "<br><br><h5>Address Details : </h5><br>Name : "+name+"<br>Mobile Number : "+mobile+" <span style='font-size:12px;color:#f00'>(You can use this number to track your order)</span><br>Address : "+house+" "+sector+" ("+nearby+")  Panchkula";
+
+					$('#orderDetails').html(data);
+				}else{
+					$('#orderDetails').html('Please Add Order/Name/Mobile Number/House Number');
+					$("#placeOrder"). attr("disabled", true); 
+
+				}
+			});
+			
+			/**Place Order**/
+			$('#placeOrder').on('click',function(){
+				var name = getValue('#inputName');
+				var mobile = getValue('#MobileNumber');
+				var house = getValue('#HouseNumber');
+				var nearby = getValue('#NearBy');
+				var sector = getValue('#sector');
+
+
+
+				/*Order Details*/
+				var golgappe = getValue('#golgappaPlates');
+				var bhalla = getValue('#bhallaPlates');
+				var papdi = getValue('#papdiPlates');
+				var tikki = getValue('#tikkiPlates');
+
+				var address = house+" "+sector+" ("+nearby+") Panchkula."
+
+				$.ajax({
+				url:'placeOrder.php',
+				type:'POST',
+				data:{'golgappe':golgappe,'bhalla':bhalla,'papdi':papdi,'tikki':tikki,'name':name,'mobile':mobile,'address':address},
+				success:function(data){
+          $("#placeOrder"). attr("disabled", true);
+					$('#show').html(data);
+					DefaultValue2('#inputName');
+					DefaultValue2('#MobileNumber');
+					DefaultValue2('#HouseNumber');
+					DefaultValue2('#NearBy');
+				}
+			});
+			});
+			
+		});
+	</script>
+  </body>
+</html>

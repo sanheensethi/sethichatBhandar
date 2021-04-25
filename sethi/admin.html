@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Sethi Chat Bhandar - Order</title>
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="jumbotron">
+        <center><h3>Admin Pannel</h3></center>
+      </div>
+      <form class="form-inline">
+        <div id="show"></div>
+        <label class="sr-only" for="username">Username</label>
+  <div class="input-group mb-2 mr-sm-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text">@</div>
+    </div>
+    <input type="text" class="form-control" id="username" placeholder="Username">
+  </div>
+
+  <label class="sr-only" for="password">Username</label>
+  <div class="input-group mb-2 mr-sm-2">
+    <div class="input-group-prepend">
+      <div class="input-group-text">#</div>
+    </div>
+    <input type="password" class="form-control" id="password" placeholder="Password">
+  </div>
+
+
+  <button type="submit" id="login" class="btn btn-success mb-2">Login</button>
+</form>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+
+
+  <script type="text/javascript">
+    
+    function getValue(id){
+      return $(id).val();
+    }
+
+    function DefaultValue2(valueID){
+      $(valueID).val('');
+    }
+
+    $(document).ready(function(){
+      /*Default Value*/
+      DefaultValue2('#username');
+      DefaultValue2('#password');
+      
+      /**Place Order**/
+      $('#login').on('click',function(e){
+        e.preventDefault();
+        var username = getValue('#username');
+        var password = getValue('#password');
+
+        $.ajax({
+        url:'authen.php',
+        type:'POST',
+        data:{'user':username,'pass':password},
+        success:function(data){
+          $('#show').html(data);
+        }
+      });
+      });
+      
+    });
+  </script>
+  </body>
+</html>
