@@ -5,6 +5,7 @@
   <thead>
     <th>Order ID</th>
     <th>Status</th>
+    <th>Update</th>
     <th>M. Number</th>
     <th>Name</th>
     <th>Address</th>
